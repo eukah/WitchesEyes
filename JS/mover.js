@@ -1,7 +1,8 @@
 //MOVER ====== ININCIO
 const personagem = document.getElementById('personagem');
-let posicaoHorizontal = 100;
-let posicaoVertical = 100;
+let posicaoHorizontal = 500;
+let posicaoVertical = 500;
+updatePersonagemPosition();
 
 function updatePersonagemPosition() {
   personagem.style.left = posicaoHorizontal + 'px';
@@ -11,16 +12,16 @@ function updatePersonagemPosition() {
 document.addEventListener('keydown', (event) => {
   switch (event.key) {
     case 'ArrowUp':
-      posicaoVertical -= 10;
+      posicaoVertical -= 50;
       break;
     case 'ArrowDown':
-      posicaoVertical += 10;
+      posicaoVertical += 50;
       break;
     case 'ArrowLeft':
-      posicaoHorizontal -= 10;
+      posicaoHorizontal -= 50;
       break;
     case 'ArrowRight':
-      posicaoHorizontal += 10;
+      posicaoHorizontal += 50;
       break;
   }
   updatePersonagemPosition();

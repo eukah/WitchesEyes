@@ -2,6 +2,7 @@
 function checkCollision() {
     const personagemRect = personagem.getBoundingClientRect();
     const inimigoRect = inimigo.getBoundingClientRect();
+    const inimigo1Rect = inimigo.getBoundingClientRect();
   
     if (
       personagemRect.left < inimigoRect.right &&
