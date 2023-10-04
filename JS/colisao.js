@@ -1,17 +1,27 @@
 //COLISÃO ===== INICIO
 function checkCollision() {
     const personagemRect = personagem.getBoundingClientRect();
-    const inimigoRect = inimigo.getBoundingClientRect();
-    const inimigo1Rect = inimigo.getBoundingClientRect();
+    const pikminVermelhoRect = pikminVermelho.getBoundingClientRect();
+    const pikminAzulRect = pikminAzul.getBoundingClientRect();
   
     if (
-      personagemRect.left < inimigoRect.right &&
-      personagemRect.right > inimigoRect.left &&
-      personagemRect.top < inimigoRect.bottom &&
-      personagemRect.bottom > inimigoRect.top
+      personagemRect.left < pikminVermelhoRect.right &&
+      personagemRect.right > pikminVermelhoRect.left &&
+      personagemRect.top < pikminVermelhoRect.bottom &&
+      personagemRect.bottom > pikminVermelhoRect.top
     ) {
       personagem.remove();
     }
+
+    if (
+      personagemRect.left < pikminAzulRect.right &&
+      personagemRect.right > pikminAzulRect.left &&
+      personagemRect.top < pikminAzulRect.bottom &&
+      personagemRect.bottom > pikminAzulRect.top
+    ) {
+      personagem.remove();
+    }
+
   }
 //COLISAO ===== FIM
 //COLISAO NO INIMIGO ===== INICIO
@@ -20,16 +30,26 @@ function checkCollision() {
     if (!tiro) return; // Se o tiro não existir, retorne e não faça nada
 
     const tiroRect = tiro.getBoundingClientRect();
-    const inimigoRect = inimigo.getBoundingClientRect();
+    const pikminVermelhoRect = pikminVermelho.getBoundingClientRect();
+    const pikminAzulRect = pikminAzul.getBoundingClientRect();
 
     if (
-        tiroRect.left < inimigoRect.right &&
-        tiroRect.right > inimigoRect.left &&
-        tiroRect.top < inimigoRect.bottom &&
-        tiroRect.bottom > inimigoRect.top
+        tiroRect.left < pikminVermelhoRect.right &&
+        tiroRect.right > pikminVermelhoRect.left &&
+        tiroRect.top < pikminVermelhoRect.bottom &&
+        tiroRect.bottom > pikminVermelhoRect.top
     ) {
-        inimigo.remove();
+      pikminVermelho.remove();
     }
+
+    if (
+      tiroRect.left < pikminAzulRect.right &&
+      tiroRect.right > pikminAzulRect.left &&
+      tiroRect.top < pikminAzulRect.bottom &&
+      tiroRect.bottom > pikminAzulRect.top
+  ) {
+    pikminAzul.remove();
+  }
 }
 //COLISAO NO INIMIGO ===== FIM
 function checarColisoes(){
@@ -37,4 +57,4 @@ function checarColisoes(){
 	checkTiroInimigo();
 }
 
-setInterval(checarColisoes,50);
+setInterval(checarColisoes,1);

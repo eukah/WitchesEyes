@@ -1,4 +1,10 @@
-.inimigo {
+.pikminVermelho {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.pikminAzul {
   width: 100px;
   height: 100px;
   position: absolute;
