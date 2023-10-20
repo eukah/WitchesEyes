@@ -1,16 +1,14 @@
 //INIMIGO ====== INICIO
 const pikminAzul = document.getElementById('pikminAzul');
-let inimigoPositionVertical = 500; // Inimigo começa na extremidade direita
-let inimigoPositionHorizontal = 500;
+let inimigoPositionVertical = 0; // Inimigo começa na extremidade direita
 
 function moverInimigo() {
   pikminAzul.style.top = inimigoPositionVertical + 'px';
-  pikminAzul.style.left = inimigoPositionHorizontal + 'px'; //Top se refere a vertical
-  inimigoPositionVertical += 2; // Movimento para a esquerda
+  inimigoPositionVertical += 2; // Mexe na velocidade
   
   if (inimigoPositionVertical > window.innerHeight) { //Define que quando o inimigo sair da tela, algo acontece
-    inimigoPositionVertical = 0; // Reposicionar o inimigo quando ele sair da tela
-    pikminAzul.style.left = `${Math.random() * (window.innerHeight - 50)}px`; // Posição vertical aleatória
+    inimigoPositionVertical = 0; // Reposicionar o inimigo quando ele sair da tela para o spawn definido anteriormente
+    pikminAzul.style.right = `${Math.random() * (window.innerHeight - 50)}px`; // Posição vertical aleatória
   }
 }
 
